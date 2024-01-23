@@ -1,0 +1,14 @@
+name: run pytest
+
+on: [push]
+jobs:
+  run-pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: add pytest
+        run: poetry add -G dev pytest
+      - name: run pytest
+        run: poetry run pytest
+          
